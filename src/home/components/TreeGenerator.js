@@ -24,13 +24,13 @@ export default class TreeGenerator extends Component {
             const height = _.random(6,9);
             //type tree (0,9)
             const type = _.random(0,9);
-            //X coord (-width/2+20,width/2-20)
+            //X coord (-width/2+45,width/2-45)
             const xcoord = _.random(-this.props.width/2+45,this.props.width/2-45)
             //Y coord (4,9)
             const ycoord = _.random(4,9);
 
 
-            trees.push(<img src={treetype[type]} style={{height:`${height}vw`, position:"relative", bottom:`${height}vw`, marginBottom: `-${height}vw`, zIndex:30+(6-ycoord), 
+            trees.push(<img key={i} src={treetype[type]} style={{height:`${height}vw`, position:"relative", bottom:`${height}vw`, marginBottom: `-${height}vw`, zIndex:30+(6-ycoord), 
                 transform: `translate(${xcoord}px,-${ycoord}vw)`}} />);
         }
         return trees;
