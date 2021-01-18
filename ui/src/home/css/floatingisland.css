@@ -1,0 +1,19 @@
+@keyframes islandanimation {
+    0% {transform: translate(0,0);}
+    50% {transform: translate(0,2.5vw);}
+    100% {transform: translate(0,0);}
+}
+
+.island {
+    animation-name: islandanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.53,0,.42,1);
+}
+
+.islandtext {
+    animation-name: islandanimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(.53,0,.42,1);
+} 

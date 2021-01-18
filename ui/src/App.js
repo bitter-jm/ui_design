@@ -1,9 +1,9 @@
-import Page1 from "./page1_parallax/components/Home";
+import Home from "./home/components/Home";
 
 function App() {
   return (
     <div className="App">
-      <Page1 />
+      <Home />
     </div>
   );
 }

@@ -10,7 +10,7 @@ export default class Home extends Component {
       <div className="Home" style={{backgroundColor:"#121C06"}}>
         <ParallaxProvider>
           <ParallaxHome />
-          <div style={{height:"3000px"}}/>
+          <div style={{marginBottom:0, height:"22vw"}}></div>
         </ParallaxProvider>
       </div>
     );
