@@ -61,7 +61,7 @@ export default class ParallaxHome extends Component {
               </div>
             </div>
 
-            <div style={{margin:0, backgroundColor:"#121C06", height:"22vw", width:"auto", zIndex:8, position:"relative", transform:"translate(0,-25px)", display:"flex", justifyContent:"center", alignItems:"flex-start"}}>
+            <div style={{margin:0, backgroundColor:"#121C06", height:"18vw", width:"auto", zIndex:8, position:"relative", transform:"translate(0,-25px)", display:"flex", justifyContent:"center", alignItems:"flex-start"}}>
               <FloatingIsland />
             </div>
 
@@ -86,6 +86,8 @@ https://i.ibb.co/Nr1j588/parallax7.png
 https://i.ibb.co/NF4w9Jc/tree.png
 https://i.ibb.co/WphrV0j/tree2.png
 https://i.ibb.co/hH24WrN/platform.png
+
+https://i.ibb.co/NmxfM3G/ground.png
 
 FONTS:
 Delius
