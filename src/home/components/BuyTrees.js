@@ -14,6 +14,7 @@ export default class BuyTrees extends Component {
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
+    this.popsound = new Audio("https://www.zapsplat.com/wp-content/uploads/2015/sound-effects-41945/zapsplat_cartoon_pop_002_46048.mp3");
   }
   
   componentWillUnmount() {
@@ -30,6 +31,7 @@ export default class BuyTrees extends Component {
       return;
     }
     this.setState({selected: index, customamount:""});
+    this.popsound.play();
   }
 
   render() {
@@ -45,13 +47,13 @@ export default class BuyTrees extends Component {
     } 
 
     return (
-      <div style={{display:"flex", flexDirection:"column", alignItems:"center"}}>
+      <div style={{display:"flex", flexDirection:"column", alignItems:"center", overflow:"hidden"}}>
 
         <div style={{height: 450, maxWidth:"80vw", width:400, backgroundColor:"#fff", borderRadius:25, display:"flex", flexDirection:"column", alignItems:"center", zIndex:50}} >
           <div style={{fontFamily:"Neucha", fontSize:"200%", fontWeight:"bold", color:"#121C06", marginTop:30}}>JOIN #TEAMTREES!</div>
           <div style={{margin: "15px 30px 0 30px", width: "200px", borderBottomWidth: 2, borderBottomStyle:"solid", borderColor:"#a0a0a0"}}/>
           <div style={{fontFamily:"Roboto", fontSize:"120%", fontWeight:"bold", color:"#404040", marginTop: 15}}>Make a change.</div>
-          <div style={{fontFamily:"Roboto", fontSize:"100%", color:"#404040", marginTop: 5}}>With everyone's help we can revert deforestation.</div>
+          <div style={{fontFamily:"Roboto", fontSize:"100%", color:"#404040", marginTop: 5, textAlign:"center"}}>With everyone's help we can revert deforestation.</div>
           
           <div style={{display:"flex", flexDirection:"row", alignContent:"center", width: 300, flexWrap:"wrap", justifyContent:"center", marginTop: 20}}>
             <div onClick={() => {this.onPressButton.bind(this)(1)}} style={{width:"100px", height:"40px", backgroundColor: (this.state.selected === 1) ? "#113259" : "#EDF2F7", borderRadius:6, borderColor:"rgba(203,213,224)", borderStyle:"solid",borderWidth:1, margin:10, display:"flex", alignItems:"center", justifyContent:"center", color:(this.state.selected === 1)?"#fff":"#444"}}>5 Trees</div>
@@ -60,7 +62,7 @@ export default class BuyTrees extends Component {
             <div onClick={() => {this.onPressButton.bind(this)(4)}} style={{width:"100px", height:"40px", backgroundColor: (this.state.selected === 4) ? "#113259" : "#EDF2F7", borderRadius:6, borderColor:"rgba(203,213,224)", borderStyle:"solid",borderWidth:1, margin:10, display:"flex", alignItems:"center", justifyContent:"center", color:(this.state.selected === 4)?"#fff":"#444"}}>100 Trees</div>
           </div>
           <div style={{width:"220px", height:"40px", backgroundColor: (this.state.selected === 5) ? "#113259" : "#EDF2F7", borderRadius:6, borderColor:"rgba(203,213,224)", borderStyle:"solid",borderWidth:1, margin:10, display:"flex", alignItems:"center", justifyContent:"center"}}>
-            <input type="number" min="1" onClick={() => {if (this.state.customamount !== "") {this.setState({selected:5})} }} value={this.state.customamount} onChange={(event) => {if(event.target.value < 0) {return;} this.setState({customamount:event.target.value}); if (event.target.value !== "") {this.setState({selected:5});} else {this.setState({selected:0});}}} placeholder="Insert a custom amount" style={{backgroundColor:"rgba(0,0,0,0)", outline:0, borderWidth:0, padding:8, textAlign:"center", color:(this.state.selected === 5)?"#fff":"#444"}}/>
+            <input type="number" min="1" onClick={() => {if (this.state.customamount !== "") {this.setState({selected:5})} }} value={this.state.customamount} onChange={(event) => {if(event.target.value < 0) {return;} this.setState({customamount:event.target.value}); if (event.target.value !== "") {this.setState({selected:5}); this.popsound.play();} else {this.setState({selected:0});}}} placeholder="Insert a custom amount" style={{backgroundColor:"rgba(0,0,0,0)", outline:0, borderWidth:0, padding:8, textAlign:"center", color:(this.state.selected === 5)?"#fff":"#444"}}/>
           </div>
           <button style={{marginTop:30, padding:7, width:100, borderRadius:12, outline:0, borderWidth:1, borderColor:"#aaa", backgroundColor:this.state.selected !== 0 ? "#244C91" : "#A3B3CE", fontWeight:"bold", color: this.state.selected !== 0 ? "#fff" : "#555"}}>Next</button>
         

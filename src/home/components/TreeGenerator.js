@@ -16,6 +16,17 @@ const treetype = [
 
 export default class TreeGenerator extends Component {
 
+    componentDidMount() {
+        this.preloadImages();
+    }
+
+    async preloadImages() {
+        treetype.forEach((url) => {
+            const img = new Image();
+            img.src = url;
+        })
+    }
+
     generateTrees() {
         var trees = [];
         for (let i = 0; i < this.props.amount; i++) {
@@ -25,7 +36,7 @@ export default class TreeGenerator extends Component {
             //type tree (0,9)
             const type = _.random(0,9);
             //X coord (-width/2+45,width/2-45)
-            const xcoord = _.random(-this.props.width/2+45,this.props.width/2-45)
+            const xcoord = _.random(-this.props.width/2+25,this.props.width/2-25)
             //Y coord (4,9)
             const ycoord = _.random(4,9);
 
@@ -35,7 +46,6 @@ export default class TreeGenerator extends Component {
         }
         return trees;
     }
-
 
     render() {
         if (this.props.amount === 0) return (<></>);
