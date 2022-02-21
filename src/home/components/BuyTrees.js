@@ -71,7 +71,7 @@ export default class BuyTrees extends Component {
         <div style={{height:(1478 - this.state.width)/4}}/>
 
         <div className="gradient" style={{height:"28vw", width:"100%", backgroundImage: "linear-gradient(to bottom, #121C06, #596b3f)", position:"relative", bottom:220, zIndex:12, marginBottom:-220}} />
-        <img src="https://i.ibb.co/NmxfM3G/ground.png" style={{width:"100%", position:"relative", bottom:"10vw", marginBottom: "-10vw", zIndex:20}} />
+        <img src="https://i.ibb.co/NmxfM3G/ground.png" alt="" style={{width:"100%", position:"relative", bottom:"10vw", marginBottom: "-10vw", zIndex:20}} />
 
         <TreeGenerator amount={treeamount} width={this.state.width} />
 
