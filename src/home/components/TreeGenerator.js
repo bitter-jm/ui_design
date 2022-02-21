@@ -41,7 +41,7 @@ export default class TreeGenerator extends Component {
             const ycoord = _.random(4,9);
 
 
-            trees.push(<img key={i} src={treetype[type]} style={{height:`${height}vw`, position:"relative", bottom:`${height}vw`, marginBottom: `-${height}vw`, zIndex:30+(6-ycoord), 
+            trees.push(<img key={i} alt="tree" src={treetype[type]} style={{height:`${height}vw`, position:"relative", bottom:`${height}vw`, marginBottom: `-${height}vw`, zIndex:30+(6-ycoord), 
                 transform: `translate(${xcoord}px,-${ycoord}vw)`}} />);
         }
         return trees;
